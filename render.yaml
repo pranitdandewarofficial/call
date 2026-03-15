@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ai-call-agent
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        value: 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
+      - key: OWNER_NAME
+        value: PRANIT
+      - key: BASE_URL
+        value: ""
